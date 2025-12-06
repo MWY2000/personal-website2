@@ -17,6 +17,8 @@ jobs:
         hugo-version: 'latest'
     - name: Build
       run: hugo --minify
+   - name: Move 404.html to site root
+     run: cp public/404.html ./404.html
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
